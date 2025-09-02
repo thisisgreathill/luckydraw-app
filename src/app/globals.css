@@ -1,0 +1,231 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: var(--font-geist-sans), 'Arial Black', Arial, Helvetica, sans-serif;
+  font-weight: 500;
+}
+
+@layer base {
+  :root {
+    /* Casino Theme - Black, Red, Gold Color Palette */
+    --background: 0 0% 5%; /* Pure black background */
+    --foreground: 0 0% 95%; /* White text */
+    --card: 0 0% 8%; /* Dark black cards */
+    --card-foreground: 0 0% 95%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 0 84% 60%; /* Casino red - main brand color */
+    --primary-foreground: 0 0% 100%; /* White text on red */
+    --secondary: 45 100% 50%; /* Gold for secondary elements */
+    --secondary-foreground: 0 0% 10%;
+    --muted: 0 0% 15%; /* Dark gray */
+    --muted-foreground: 0 0% 65%;
+    --accent: 45 100% 55%; /* Bright gold accent */
+    --accent-foreground: 0 0% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 20%; /* Dark borders */
+    --input: 0 0% 12%; /* Dark inputs */
+    --ring: 0 84% 60%; /* Red focus rings */
+    --chart-1: 0 84% 60%;
+    --chart-2: 45 100% 50%;
+    --chart-3: 120 60% 50%;
+    --chart-4: 240 100% 70%;
+    --chart-5: 300 80% 60%;
+    --radius: 1.2rem; /* Rounded corners for casino aesthetic */
+
+    /* Sidebar specific colors */
+    --sidebar-background: 0 0% 8%;
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-primary: 0 84% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 45 100% 50%;
+    --sidebar-accent-foreground: 0 0% 10%;
+    --sidebar-border: 0 0% 25%;
+    --sidebar-ring: 0 84% 60%;
+  }
+
+  .dark {
+    /* Enhanced dark theme with casino colors */
+    --background: 0 0% 5%;
+    --foreground: 0 0% 95%;
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 95%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 0 84% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 45 100% 50%;
+    --secondary-foreground: 0 0% 10%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+    --accent: 45 100% 55%;
+    --accent-foreground: 0 0% 10%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 20%;
+    --input: 0 0% 12%;
+    --ring: 0 84% 60%;
+    --chart-1: 0 84% 60%;
+    --chart-2: 45 100% 50%;
+    --chart-3: 120 60% 50%;
+    --chart-4: 240 100% 70%;
+    --chart-5: 300 80% 60%;
+    
+    --sidebar-background: 0 0% 8%;
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-primary: 0 84% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 45 100% 50%;
+    --sidebar-accent-foreground: 0 0% 10%;
+    --sidebar-border: 0 0% 25%;
+    --sidebar-ring: 0 84% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    /* Casino gradient background with subtle texture */
+    background: radial-gradient(ellipse at top, 
+      rgb(20, 20, 20) 0%, 
+      rgb(0, 0, 0) 70%, 
+      rgb(10, 0, 0) 100%);
+    background-attachment: fixed;
+  }
+}
+
+@layer utilities {
+  .animate-scroll-x {
+    animation: scroll-x 90s linear infinite;
+  }
+  .pause-animation {
+    animation-play-state: paused;
+  }
+  
+  /* Casino Glow Effects */
+  .casino-glow {
+    background: rgba(220, 38, 38, 0.05);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(220, 38, 38, 0.2);
+    box-shadow: 0 8px 32px rgba(220, 38, 38, 0.1);
+  }
+  
+  .gold-glow {
+    background: rgba(251, 191, 36, 0.05);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(251, 191, 36, 0.2);
+    box-shadow: 0 8px 32px rgba(251, 191, 36, 0.1);
+  }
+  
+  .casino-gradient {
+    background: linear-gradient(135deg, 
+      rgb(220, 38, 38) 0%, 
+      rgb(153, 27, 27) 50%, 
+      rgb(251, 191, 36) 100%);
+  }
+  
+  .neon-red {
+    text-shadow: 0 0 5px rgb(220, 38, 38), 
+                 0 0 10px rgb(220, 38, 38), 
+                 0 0 20px rgb(220, 38, 38);
+  }
+  
+  .neon-gold {
+    text-shadow: 0 0 5px rgb(251, 191, 36), 
+                 0 0 10px rgb(251, 191, 36), 
+                 0 0 20px rgb(251, 191, 36);
+  }
+  
+  .hover-glow {
+    transition: all 0.3s ease;
+  }
+  
+  .hover-glow:hover {
+    box-shadow: 0 0 30px rgba(220, 38, 38, 0.4);
+    transform: translateY(-2px);
+  }
+
+  /* Casino button effects */
+  .casino-button {
+    background: linear-gradient(135deg, 
+      rgb(220, 38, 38) 0%, 
+      rgb(153, 27, 27) 100%);
+    border: 2px solid rgb(251, 191, 36);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .casino-button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 15px 35px rgba(220, 38, 38, 0.5);
+  }
+  
+  .casino-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+  }
+  
+  .casino-button:hover::before {
+    left: 100%;
+  }
+
+  /* Slot machine style animations */
+  .slot-spin {
+    animation: slot-spin 2s ease-in-out infinite;
+  }
+  
+  .chip-bounce {
+    animation: chip-bounce 3s ease-in-out infinite;
+  }
+  
+  .neon-pulse {
+    animation: neon-pulse 2s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes scroll-x {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes slot-spin {
+  0%, 100% { transform: rotateY(0deg); }
+  50% { transform: rotateY(180deg); }
+}
+
+@keyframes chip-bounce {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  25% { transform: translateY(-10px) rotate(90deg); }
+  50% { transform: translateY(-5px) rotate(180deg); }
+  75% { transform: translateY(-15px) rotate(270deg); }
+}
+
+@keyframes neon-pulse {
+  0% { 
+    text-shadow: 0 0 5px currentColor, 
+                 0 0 10px currentColor, 
+                 0 0 20px currentColor; 
+  }
+  100% { 
+    text-shadow: 0 0 10px currentColor, 
+                 0 0 20px currentColor, 
+                 0 0 40px currentColor; 
+  }
+}
